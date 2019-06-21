@@ -14,7 +14,7 @@
       <h1 class="">Out of Thyme!</h1>
       <h3>A cooking app by:</h3>
       <p>Elizabeth Tackett, Jay Lin, Mae LaPresta, Karen Berba</p>
-      <button id="enterBtn" class="btn btn-center btn-dark">Start</button>
+      <button id="enterBtn" class="btn btn-center btn-success">Start</button>
     </div>
     <!-- Nav Bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -33,7 +33,7 @@
 
   <!-- Recipe Form and main body -->
   <div class="container">
-    <form action="" method="post">
+    <form>
       <div class="form-group">
         <label for="recipeSelect">Select a recipe</label>
         <select class="form-control form-control-lg" id="recipeSelect">
@@ -42,12 +42,12 @@
           <option value="recipe3" id="recipe3">Recipe 3</option>
         </select>
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button id="formSubmitBtn" type="submit" class="btn btn-primary">Submit</button>
     </form>
     <div class="row text-center">
-      <p class="col-sm-4">Recipe Description</p>
-      <p class="col-sm-4">Directions</p>
-      <p class="col-sm-4">Timers</p>
+      <p class="col-sm-4" id="recipeDescription">Recipe Description</p>
+      <p class="col-sm-4" id="recipeDirections">Directions</p>
+      <p class="col-sm-4" id="recipeTimers">Timers</p>
     </div>
   </div>
 
