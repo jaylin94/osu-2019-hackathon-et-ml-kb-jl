@@ -26,7 +26,8 @@ $(function() {
   }
 
   // When form button is clicked, recipeDisplay is run and the text of the recipe description and recipe directions are changed.
-  $("#formSubmitBtn").on("click", function(){
+  $("#formSubmitBtn").on("click", function(e){
+    e.preventDefault();
     recipeDisplay();
     });
 });
