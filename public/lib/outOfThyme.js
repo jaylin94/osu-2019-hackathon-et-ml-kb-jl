@@ -6,13 +6,13 @@ var testRecipe = [
     directions: [{step: "Preheat oven to 375°.", time: null},
       {step: "In a small skillet, heat oil over medium-high heat.", time: null},
       {step: "Add onion", time: null},
-      {step: "cook and stir until tender (3-4 minutes).", time: {min: 3, max: 4}},
+      {step: "cook and stir until tender (3-4 minutes).", time: 4},
       {step: "Add garlic; cook 1 minute longer", time: 1},
       {step: "Cool slightly.", time: null},
       {step: "In a large bowl, combine bread crumbs, cheese, eggs, seasonings and onion mixture.", time: null},
       {step: "Add turkey and beef; mix lightly but thoroughly.", time: null},
       {step: "Shape into 1-1/2-in. balls. Place meatballs on a rack coated with cooking spray in a 15x10x1-in. baking pan.", time: null},
-      {step: "Bake until lightly browned and cooked through. 18-22 minutes.", time: {min: 18, max: 22}},
+      {step: "Bake until lightly browned and cooked through. 18-22 minutes.", time: 20},
       {step: "If desired, serve with pasta and pasta sauce.", time: null}],
     tips: "Test Kitchen Tips Consider preparing meatballs in bulk to save on prep time. You can make several batches of meatballs, bake them and then freeze until needed. Simply thaw the frozen meatballs in the refrigerator overnight and you’ll be ready to go. Spaghetti-and-meatball pizza is a fun way to combine two Italian-inspired favorites. If you have leftover cooked spaghetti, toss it with some spaghetti sauce or additional pizza sauce, then layer it on the pizza before the onion and meatballs. Buon appetito! Check out 37 of our favorite meatball recipes.",
     nutFacts: "Nutrition Facts 1 serving: 271 calories, 13g fat (5g saturated fat), 125mg cholesterol, 569mg sodium, 10g carbohydrate (1g sugars, 1g fiber), 27g protein. Diabetic Exchanges: 4 lean meat, 1 fat, 1/2 starch.",
@@ -60,6 +60,7 @@ function recipeDisplay(){
   if($("#recipeSelect").val() === "recipe1"){
     $("#recipeDescription").text(testRecipe[0].description);
 
+    // list each recipe step w/checkbox
     $(testRecipe[0]['directions']).each(function(i) {
       var newListItem = document.createElement('li');
       var newInput = document.createElement('input');
@@ -79,15 +80,21 @@ function recipeDisplay(){
 }
 
 function trackRecipeProgression() {
+  // track current recipe step of user
   var listItems = $("#recipeDirections li input");
   var currentStep = 0;
 
+  // update current step when input box is checked
   listItems.on("change", function(e) {
     $(this).prop('disabled', true);
     currentStep = listItems.index(this) + 1;
 
-    if (testRecipe[0]['directions'][currentStep].time) {
-      alert('begin timer?');
+    var time = testRecipe[0]['directions'][currentStep].time;
+
+    if (time) {
+      if (confirm('Begin timer?')) {
+        timer(time);
+      }
     }
   });
 }

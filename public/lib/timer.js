@@ -3,7 +3,6 @@
  // 1 h = 3600000 ms    (60 minutes)
  // 0.5 h = 1800000 ms  (30 minutes)
  // 0.25 h = 900000 ms  (15 minutes)
-
 function timer(addMin) {
  let days, hours, minutes, seconds;
  let endDate;
@@ -48,9 +47,3 @@ function timer(addMin) {
    }
  }
 }
-
-// for testing purposes!
-(function () {
- var d = new Date().getTime();
- timer(60);   // add minutes to timer
-}());
