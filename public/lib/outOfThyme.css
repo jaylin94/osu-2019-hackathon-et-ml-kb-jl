@@ -1,5 +1,6 @@
 .jumbotron {
   margin-bottom: 2%;
+  margin-top: 2%;
 }
 
 .thyme-bg {
@@ -10,6 +11,10 @@
 
 .modal-content {
   opacity: 0.95;
+}
+
+.navbar-top {
+  position: fixed;
 }
 
 .introTitle {
