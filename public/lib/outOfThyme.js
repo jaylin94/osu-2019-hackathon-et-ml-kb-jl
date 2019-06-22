@@ -21,13 +21,36 @@ var testRecipe = [
     timers: "Placeholder for timers"
   }
 ];
+// Your web app's Firebase configuration
+var firebaseConfig = {
+  apiKey: "AIzaSyDK_8HWkEyCsHwafNFmf2F4OSfo7IzlRec",
+  authDomain: "hackathon-2019-out-of-thyme.firebaseapp.com",
+  databaseURL: "https://hackathon-2019-out-of-thyme.firebaseio.com",
+  projectId: "hackathon-2019-out-of-thyme",
+  storageBucket: "hackathon-2019-out-of-thyme.appspot.com",
+  messagingSenderId: "217558856346",
+  appId: "1:217558856346:web:0858f91b1d02c9a4"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+var db = firebase.firestore();
 
 $(function() {
-  // When form button is clicked, recipeDisplay is run and the text of the recipe description and recipe directions are changed.
-  $("#formSubmitBtn").on("click", function(e){
-    e.preventDefault();
-    recipeDisplay();
+=======
+// When form button is clicked, recipeDisplay is run and the text of the recipe description and recipe directions are changed.
+$("#formSubmitBtn").on("click", function(){
+  recipeDisplay();
+  databaseRetrieve();
+  });
+//reference: https://www.youtube.com/watch?v=NcewaPfFR6Y
+function databaseRetrieve(){
+  db.collection("recipes").get().then(function(querySnapshot) {
+    querySnapshot.forEach(function(doc) {
+        // doc.data() is never undefined for query doc snapshots
+        console.log(doc.id, " => ", doc.data());
     });
+}
+)};
 
     trackRecipeProgression();
 });
@@ -59,3 +82,4 @@ function recipeDisplay(){
 function trackRecipeProgression() {
 
 }
+
