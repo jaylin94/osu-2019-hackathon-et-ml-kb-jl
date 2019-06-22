@@ -1,6 +1,6 @@
 .jumbotron {
   margin-bottom: 2%;
-  margin-top: 2%;
+  margin-top: 7%;
 }
 
 .thyme-bg {
@@ -9,15 +9,31 @@
   background-position: center;
 }
 
+.modal {
+    position: fixed;
+    max-width: 100%;
+    max-height: 100%;
+    z-index: 100000;
+}
+
+.modal-backdrop {
+  z-index: 0;
+}
+
 .modal-content {
   opacity: 0.95;
 }
 
-.navbar-top {
+.navbar-top{
   position: fixed;
+  z-index: 1039;
+  top: 0;
+  width: 100%;
+
 }
 
 .introTitle {
+  margin-top: 5%;
   font-family: 'Pacifico', cursive ;
   font-size: 60px;
   color: #373D3F;
@@ -25,7 +41,7 @@
 }
 
 .introMsg {
-  margin-top: 1%;
+  margin-top: 2%;
   font-family: 'Raleway', sans-serif;
   font-size: 30px;
   color: #373D3F;
