@@ -33,19 +33,8 @@ var firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+var db = firebase.firestore();
 
-var database = firebase.firestore();
-// Display's recipe selected from dropdown, only recipe1 generates info currently
-function recipeDisplay(){
-  if($("#recipeSelect").val() === "recipe1"){
-    $("#recipeDescription").text(testRecipe[0].description);
-    $("#recipeDirections").text(testRecipe[0].directions);
-  }
-  else {
-    $("#recipeDescription").text("N/A");
-    $("#recipeDirections").text("N/A");
-
-$(function() {
   // Display's recipe selected from dropdown, only recipe1 generates info currently
   function recipeDisplay(){
     if($("#recipeSelect").val() === "recipe1"){
@@ -81,14 +70,8 @@ function databaseRetrieve(){
 )};
 
 
-function gotData(data){
-  console.log(data.val());
-
-}
-
   // When form button is clicked, recipeDisplay is run and the text of the recipe description and recipe directions are changed.
   $("#formSubmitBtn").on("click", function(e){
     e.preventDefault();
     recipeDisplay();
     });
-});
