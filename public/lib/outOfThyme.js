@@ -53,21 +53,30 @@ var db = firebase.firestore();
 
   }
 
+function getSteps(recipeId){
+  //get the recipe info, including the description
+  var recipeQuery=db.collection('recipes').where('id', '==', recipeId);
+  recipeQuery.get().then((snapshot)=>{
+    snapshot.docs.forEach(doc=>{
+      console.log(doc.data());
+    })
+  })
+//get each recipe direction one by one, from firestore db
+  var dirQuery=db.collection('directions').where('id', '==', recipeId).orderBy('stepNum','asc');
+  dirQuery.get().then((snapshot)=>{
+    snapshot.docs.forEach(doc=>{
+      console.log(doc.data());
+    })
+  });
+
+};
 
 // When form button is clicked, recipeDisplay is run and the text of the recipe description and recipe directions are changed.
 $("#formSubmitBtn").on("click", function(){
   recipeDisplay();
-  databaseRetrieve();
+  //databaseRetrieve();
+  getSteps("recipe1");
   });
-//reference: https://www.youtube.com/watch?v=NcewaPfFR6Y
-function databaseRetrieve(){
-  db.collection("recipes").get().then(function(querySnapshot) {
-    querySnapshot.forEach(function(doc) {
-        // doc.data() is never undefined for query doc snapshots
-        console.log(doc.id, " => ", doc.data());
-    });
-}
-)};
 
 
   // When form button is clicked, recipeDisplay is run and the text of the recipe description and recipe directions are changed.
