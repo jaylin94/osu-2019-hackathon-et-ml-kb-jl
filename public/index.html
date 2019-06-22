@@ -8,6 +8,8 @@
 </head>
 
 <body>
+
+
   <!-- Intro display, jumbotron -->
   <div class="container">
     <div class="jumbotron text-center">
@@ -56,6 +58,26 @@
   <script src="./lib/jquery.js" type="text/javascript"></script>
   <script src="./lib/bootstrap.js" type="text/javascript"></script>
   <script src="./lib/outOfThyme.js" type="text/javascript"></script>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.2.2/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDK_8HWkEyCsHwafNFmf2F4OSfo7IzlRec",
+    authDomain: "hackathon-2019-out-of-thyme.firebaseapp.com",
+    databaseURL: "https://hackathon-2019-out-of-thyme.firebaseio.com",
+    projectId: "hackathon-2019-out-of-thyme",
+    storageBucket: "hackathon-2019-out-of-thyme.appspot.com",
+    messagingSenderId: "217558856346",
+    appId: "1:217558856346:web:0858f91b1d02c9a4"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
 </body>
 
 </html>
