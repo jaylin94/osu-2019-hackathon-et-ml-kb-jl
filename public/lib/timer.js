@@ -1,4 +1,4 @@
-
+let interval;
 // notes:
  // 1 h = 3600000 ms    (60 minutes)
  // 0.5 h = 1800000 ms  (30 minutes)
@@ -20,7 +20,7 @@ function timer(addMin) {
  return;
  }
 
- var interval = setInterval(calculate, 1000);
+ interval = setInterval(calculate, 1000);
 
  function calculate() {
    // gets current time
