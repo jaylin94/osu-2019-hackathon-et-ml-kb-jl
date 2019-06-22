@@ -23,13 +23,13 @@ var testRecipe = [
 ];
 
 $(function() {
-  
-
   // When form button is clicked, recipeDisplay is run and the text of the recipe description and recipe directions are changed.
   $("#formSubmitBtn").on("click", function(e){
     e.preventDefault();
     recipeDisplay();
     });
+
+    trackRecipeProgression();
 });
 
 // Display's recipe selected from dropdown, only recipe1 generates info currently
@@ -39,7 +39,12 @@ function recipeDisplay(){
 
     $(testRecipe[0]['directions']).each(function(i) {
       var newListItem = document.createElement('li');
-      $(newListItem).text(this.step);
+      var newInput = document.createElement('input');
+      newInput.type="checkbox";
+      newInput.text="hi";
+      console.log(newInput);
+      $(newListItem).append(newInput);
+      //$(newListItem).text(this.step);
       $("#recipeDirections").append(newListItem);
     });
   }
@@ -47,4 +52,8 @@ function recipeDisplay(){
     $("#recipeDescription").text("N/A");
     $("#recipeDirections").text("N/A");
   }
+}
+
+function trackRecipeProgression() {
+
 }
