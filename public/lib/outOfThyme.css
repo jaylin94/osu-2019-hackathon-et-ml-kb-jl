@@ -1,5 +1,4 @@
 .jumbotron {
-  font-family: 'Pacifico', cursive ;
   margin-bottom: 2%;
 }
 
@@ -13,6 +12,7 @@
 }
 
 .introTitle {
+  font-family: 'Pacifico', cursive ;
   font-size: 60px;
   color: #373D3F;
   text-shadow: 1px 2px 6px beige, 1px 2px 1px white, 1px 2px 3px green;
