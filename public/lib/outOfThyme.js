@@ -23,22 +23,7 @@ var testRecipe = [
 ];
 
 $(function() {
-  // Display's recipe selected from dropdown, only recipe1 generates info currently
-  function recipeDisplay(){
-    if($("#recipeSelect").val() === "recipe1"){
-      $("#recipeDescription").text(testRecipe[0].description);
-
-      $(testRecipe[0]['directions']).each(function(i) {
-        var newListItem = document.createElement('li');
-        $(newListItem).text(this.step);
-        $("#recipeDirections").append(newListItem);
-      });
-    }
-    else {
-      $("#recipeDescription").text("N/A");
-      $("#recipeDirections").text("N/A");
-    }
-  }
+  
 
   // When form button is clicked, recipeDisplay is run and the text of the recipe description and recipe directions are changed.
   $("#formSubmitBtn").on("click", function(e){
@@ -46,3 +31,20 @@ $(function() {
     recipeDisplay();
     });
 });
+
+// Display's recipe selected from dropdown, only recipe1 generates info currently
+function recipeDisplay(){
+  if($("#recipeSelect").val() === "recipe1"){
+    $("#recipeDescription").text(testRecipe[0].description);
+
+    $(testRecipe[0]['directions']).each(function(i) {
+      var newListItem = document.createElement('li');
+      $(newListItem).text(this.step);
+      $("#recipeDirections").append(newListItem);
+    });
+  }
+  else {
+    $("#recipeDescription").text("N/A");
+    $("#recipeDirections").text("N/A");
+  }
+}
