@@ -34,7 +34,6 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-<<<<<<< HEAD
 var database = firebase.firestore();
 // Display's recipe selected from dropdown, only recipe1 generates info currently
 function recipeDisplay(){
@@ -45,7 +44,7 @@ function recipeDisplay(){
   else {
     $("#recipeDescription").text("N/A");
     $("#recipeDirections").text("N/A");
-=======
+
 $(function() {
   // Display's recipe selected from dropdown, only recipe1 generates info currently
   function recipeDisplay(){
@@ -62,10 +61,10 @@ $(function() {
       $("#recipeDescription").text("N/A");
       $("#recipeDirections").text("N/A");
     }
->>>>>>> 70196f95308917a918d4070716d1bdcf6c4a2100
+
   }
 
-<<<<<<< HEAD
+
 // When form button is clicked, recipeDisplay is run and the text of the recipe description and recipe directions are changed.
 $("#formSubmitBtn").on("click", function(){
   recipeDisplay();
@@ -86,11 +85,10 @@ function gotData(data){
   console.log(data.val());
 
 }
-=======
+
   // When form button is clicked, recipeDisplay is run and the text of the recipe description and recipe directions are changed.
   $("#formSubmitBtn").on("click", function(e){
     e.preventDefault();
     recipeDisplay();
     });
 });
->>>>>>> 70196f95308917a918d4070716d1bdcf6c4a2100
