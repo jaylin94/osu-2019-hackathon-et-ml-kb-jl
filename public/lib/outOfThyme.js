@@ -40,20 +40,46 @@ $(function() {
   $("#formSubmitBtn").on("click", function(e){
     e.preventDefault();
     recipeDisplay();
-    databaseRetrieve();
+
+    //databaseRetrieve();
+    getSteps("recipe1");
     trackRecipeProgression();
     });
   //reference: https://www.youtube.com/watch?v=NcewaPfFR6Y
-  function databaseRetrieve(){
+  /*function databaseRetrieve(){
     db.collection("recipes").get().then(function(querySnapshot) {
       querySnapshot.forEach(function(doc) {
           // doc.data() is never undefined for query doc snapshots
           console.log(doc.id, " => ", doc.data());
       });
     });
-  }
+  }*/
 
 });
+
+// Display's recipe selected from dropdown, only recipe1 generates info currently
+function recipeDisplay(){
+  if($("#recipeSelect").val() === "recipe1"){
+    $("#recipeDescription").text(testRecipe[0].description);
+
+    // list each recipe step w/checkbox
+    $(testRecipe[0]['directions']).each(function(i) {
+      var newListItem = document.createElement('li');
+      var newInput = document.createElement('input');
+      var label = document.createElement('label');
+
+      newInput.type="checkbox";
+      label.appendChild(newInput);
+      label.appendChild(document.createTextNode(this.step));
+      $(newListItem).append(label);
+      $("#recipeDirections").append(newListItem);
+    });
+  }
+  else {
+    $("#recipeDescription").text("N/A");
+    $("#recipeDirections").text("N/A");
+  }
+}
 
 // Display's recipe selected from dropdown, only recipe1 generates info currently
 function recipeDisplay(){
@@ -98,3 +124,21 @@ function trackRecipeProgression() {
     }
   });
 }
+
+function getSteps(recipeId){
+  //get the recipe info, including the description
+  var recipeQuery=db.collection('recipes').where('id', '==', recipeId);
+  recipeQuery.get().then((snapshot)=>{
+    snapshot.docs.forEach(doc=>{
+      console.log(doc.data());
+    })
+  })
+//get each recipe direction one by one, from firestore db
+  var dirQuery=db.collection('directions').where('id', '==', recipeId).orderBy('stepNum','asc');
+  dirQuery.get().then((snapshot)=>{
+    snapshot.docs.forEach(doc=>{
+      console.log(doc.data());
+    })
+  });
+
+};
