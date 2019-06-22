@@ -40,19 +40,96 @@ $(function() {
   $("#formSubmitBtn").on("click", function(e){
     e.preventDefault();
     recipeDisplay();
+<<<<<<< HEAD
+    //databaseRetrieve();
+    getSteps("recipe1");
+    trackRecipeProgression();
+    });
+  //reference: https://www.youtube.com/watch?v=NcewaPfFR6Y
+  /*function databaseRetrieve(){
+=======
     databaseRetrieve();
     trackRecipeProgression();
     });
   //reference: https://www.youtube.com/watch?v=NcewaPfFR6Y
   function databaseRetrieve(){
+>>>>>>> master
     db.collection("recipes").get().then(function(querySnapshot) {
       querySnapshot.forEach(function(doc) {
           // doc.data() is never undefined for query doc snapshots
           console.log(doc.id, " => ", doc.data());
       });
     });
-  }
+<<<<<<< HEAD
+  }*/
 
+});
+
+// Display's recipe selected from dropdown, only recipe1 generates info currently
+function recipeDisplay(){
+  if($("#recipeSelect").val() === "recipe1"){
+    $("#recipeDescription").text(testRecipe[0].description);
+
+    // list each recipe step w/checkbox
+    $(testRecipe[0]['directions']).each(function(i) {
+      var newListItem = document.createElement('li');
+      var newInput = document.createElement('input');
+      var label = document.createElement('label');
+
+      newInput.type="checkbox";
+      label.appendChild(newInput);
+      label.appendChild(document.createTextNode(this.step));
+      $(newListItem).append(label);
+      $("#recipeDirections").append(newListItem);
+    });
+=======
+>>>>>>> master
+  }
+  else {
+    $("#recipeDescription").text("N/A");
+    $("#recipeDirections").text("N/A");
+  }
+}
+
+<<<<<<< HEAD
+function trackRecipeProgression() {
+  // track current recipe step of user
+  var listItems = $("#recipeDirections li input");
+  var currentStep = 0;
+
+  // update current step when input box is checked
+  listItems.on("change", function(e) {
+    $(this).prop('disabled', true);
+    currentStep = listItems.index(this) + 1;
+
+    var time = testRecipe[0]['directions'][currentStep].time;
+
+    if (time) {
+      if (confirm('Begin timer?')) {
+        timer(time);
+      }
+    }
+  });
+}
+
+function getSteps(recipeId){
+  //get the recipe info, including the description
+  var recipeQuery=db.collection('recipes').where('id', '==', recipeId);
+  recipeQuery.get().then((snapshot)=>{
+    snapshot.docs.forEach(doc=>{
+      console.log(doc.data());
+    })
+  })
+//get each recipe direction one by one, from firestore db
+  var dirQuery=db.collection('directions').where('id', '==', recipeId).orderBy('stepNum','asc');
+  dirQuery.get().then((snapshot)=>{
+    snapshot.docs.forEach(doc=>{
+      console.log(doc.data());
+    })
+  });
+
+};
+=======
 });
 
 // Display's recipe selected from dropdown, only recipe1 generates info currently
@@ -98,3 +175,4 @@ function trackRecipeProgression() {
     }
   });
 }
+>>>>>>> master
