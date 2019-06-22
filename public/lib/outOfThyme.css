@@ -5,6 +5,7 @@
 .thyme-bg {
   background-image: url("thyme_herb-wallpaper-2560x1600.jpg");
   background-size: cover;
+  background-position: center;
 }
 
 .modal-content {
