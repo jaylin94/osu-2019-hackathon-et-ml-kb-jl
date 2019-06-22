@@ -16,7 +16,7 @@
       <h1 class="">Out of Thyme!</h1>
       <h3>A cooking app by:</h3>
       <p>Elizabeth Tackett, Jay Lin, Mae LaPresta, Karen Berba</p>
-      <button id="enterBtn" class="btn btn-center btn-success">Start</button>
+      <button id="enterBtn" class="btn btn-center btn-success">Enter</button>
     </div>
     <!-- Nav Bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -48,17 +48,23 @@
     </form>
 
     <div class="row text-center">
-      <div class="col-sm-4">
+      <div class="col-sm">
         <h5>Recipe Description</h5>
         <p id="recipeDescription"></p>
       </div>
-      <div class="col-sm-4">
+
+    </div>
+    <div class="row text-left">
+      <div class="col-sm-6">
         <h5>Directions</h5>
         <ol id="recipeDirections"></ol>
       </div>
-      <div class="col-sm-4">
+      <div class="col-sm-6">
         <h5>Timers</h5>
-        <p id="recipeTimers"></p>
+        <p id="recipeTimers">Timer Countdown Placeholder: 60 Minutes</p>
+        <button id="#timerStartBtn" class="btn btn-info">Start</button>
+        <button id="#timerStopBtn" class="btn btn-danger">Stop</button>
+        <button id="#timerResetBtn" class="btn btn-warning text-light">Reset</button>
       </div>
     </div>
   </div>
