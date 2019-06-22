@@ -5,6 +5,7 @@
   <title>Out of Thyme!</title>
   <link href="./lib/bootstrap.css" rel="stylesheet" type="text/css">
   <link href="./lib/outOfThyme.css" rel="stylesheet" type="text/css">
+  <link href="timer.css" rel="stylesheet">
 </head>
 
 <body>
@@ -50,14 +51,22 @@
     <div class="row text-center">
       <p class="col-sm-4" id="recipeDescription">Recipe Description</p>
       <p class="col-sm-4" id="recipeDirections">Directions</p>
-      <p class="col-sm-4" id="recipeTimers">Timers</p>
+      <p class="col-sm-4" id="recipeTimers">Timers <br />
+        <span id="hours"></span> Hour(s)
+        <span id="minutes"></span> Minute(s)
+        <span id="seconds"></span> Second(s)
+      </p>
     </div>
   </div>
+
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" type="text/javascript"></script>
   <script src="./lib/jquery.js" type="text/javascript"></script>
   <script src="./lib/bootstrap.js" type="text/javascript"></script>
   <script src="./lib/outOfThyme.js" type="text/javascript"></script>
+  <script src="timer.js" type="text/javascript">
+
+  </script>
   <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/6.2.2/firebase-app.js"></script>
 
