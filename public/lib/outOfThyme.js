@@ -37,23 +37,22 @@ var db = firebase.firestore();
 
 $(function() {
 // When form button is clicked, recipeDisplay is run and the text of the recipe description and recipe directions are changed.
-$("#formSubmitBtn").on("click", function(e){
-  e.preventDefault();
-  recipeDisplay();
-  databaseRetrieve();
-  });
-//reference: https://www.youtube.com/watch?v=NcewaPfFR6Y
-function databaseRetrieve(){
-  db.collection("recipes").get().then(function(querySnapshot) {
-    querySnapshot.forEach(function(doc) {
-        // doc.data() is never undefined for query doc snapshots
-        console.log(doc.id, " => ", doc.data());
-    });
-}
-)};
-
+  $("#formSubmitBtn").on("click", function(e){
+    e.preventDefault();
+    recipeDisplay();
+    databaseRetrieve();
     trackRecipeProgression();
-  });
+    });
+  //reference: https://www.youtube.com/watch?v=NcewaPfFR6Y
+  function databaseRetrieve(){
+    db.collection("recipes").get().then(function(querySnapshot) {
+      querySnapshot.forEach(function(doc) {
+          // doc.data() is never undefined for query doc snapshots
+          console.log(doc.id, " => ", doc.data());
+      });
+    });
+  }
+
 });
 
 // Display's recipe selected from dropdown, only recipe1 generates info currently
