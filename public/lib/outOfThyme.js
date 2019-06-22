@@ -53,6 +53,7 @@ function databaseRetrieve(){
 )};
 
     trackRecipeProgression();
+  });
 });
 
 // Display's recipe selected from dropdown, only recipe1 generates info currently
@@ -69,7 +70,6 @@ function recipeDisplay(){
       label.appendChild(newInput);
       label.appendChild(document.createTextNode(this.step));
       $(newListItem).append(label);
-      //$(newListItem).text(this.step);
       $("#recipeDirections").append(newListItem);
     });
   }
@@ -80,5 +80,15 @@ function recipeDisplay(){
 }
 
 function trackRecipeProgression() {
+  var listItems = $("#recipeDirections li input");
+  var currentStep = 0;
 
+  listItems.on("change", function(e) {
+    $(this).prop('disabled', true);
+    currentStep = listItems.index(this) + 1;
+
+    if (testRecipe[0]['directions'][currentStep].time) {
+      alert('begin timer?');
+    }
+  });
 }
