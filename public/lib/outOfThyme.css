@@ -1,6 +1,8 @@
 .jumbotron {
   margin-bottom: 2%;
   margin-top: 7%;
+  max-height: 100%;
+  max-width: 100%;
 }
 
 .thyme-bg {
@@ -29,7 +31,6 @@
   z-index: 1039;
   top: 0;
   width: 100%;
-
 }
 
 .introTitle {
