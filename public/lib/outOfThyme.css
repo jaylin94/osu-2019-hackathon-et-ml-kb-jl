@@ -1,6 +1,10 @@
 .jumbotron {
   margin-bottom: 2%;
-  background: seagreen;
+}
+
+.thyme-bg {
+  background-image: url("thyme_herb-wallpaper-2560x1600.jpg");
+  background-size: cover;
 }
 
 .modal-content {
@@ -8,9 +12,11 @@
 }
 
 .introTitle  {
-  text-shadow: 0px 4px 10px black, 1px 1px 1px grey;
+  color: #373D3F;
+  text-shadow: 1px 2px 6px beige, 1px 2px 1px white;
 }
 
 #introAuthors {
-  text-shadow: 0px 2px 2px black;
+  color: #373D3F;
+  text-shadow: 0px 1px 1px beige, 1px -1px 2px white;
 }
