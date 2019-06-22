@@ -35,25 +35,8 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 var db = firebase.firestore();
 
-  // Display's recipe selected from dropdown, only recipe1 generates info currently
-  function recipeDisplay(){
-    if($("#recipeSelect").val() === "recipe1"){
-      $("#recipeDescription").text(testRecipe[0].description);
-
-      $(testRecipe[0]['directions']).each(function(i) {
-        var newListItem = document.createElement('li');
-        $(newListItem).text(this.step);
-        $("#recipeDirections").append(newListItem);
-      });
-    }
-    else {
-      $("#recipeDescription").text("N/A");
-      $("#recipeDirections").text("N/A");
-    }
-
-  }
-
-
+$(function() {
+=======
 // When form button is clicked, recipeDisplay is run and the text of the recipe description and recipe directions are changed.
 $("#formSubmitBtn").on("click", function(){
   recipeDisplay();
@@ -69,9 +52,34 @@ function databaseRetrieve(){
 }
 )};
 
+    trackRecipeProgression();
+});
 
-  // When form button is clicked, recipeDisplay is run and the text of the recipe description and recipe directions are changed.
-  $("#formSubmitBtn").on("click", function(e){
-    e.preventDefault();
-    recipeDisplay();
+// Display's recipe selected from dropdown, only recipe1 generates info currently
+function recipeDisplay(){
+  if($("#recipeSelect").val() === "recipe1"){
+    $("#recipeDescription").text(testRecipe[0].description);
+
+    $(testRecipe[0]['directions']).each(function(i) {
+      var newListItem = document.createElement('li');
+      var newInput = document.createElement('input');
+      var label = document.createElement('label');
+
+      newInput.type="checkbox";
+      label.appendChild(newInput);
+      label.appendChild(document.createTextNode(this.step));
+      $(newListItem).append(label);
+      //$(newListItem).text(this.step);
+      $("#recipeDirections").append(newListItem);
     });
+  }
+  else {
+    $("#recipeDescription").text("N/A");
+    $("#recipeDirections").text("N/A");
+  }
+}
+
+function trackRecipeProgression() {
+
+}
+
