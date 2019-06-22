@@ -7,6 +7,8 @@ function timer(addMin) {
  let days, hours, minutes, seconds;
  let endDate;
 
+ clearInterval(interval);
+
  // converts to milliseconds
  addMin = addMin * 60000;
 
@@ -18,7 +20,7 @@ function timer(addMin) {
  return;
  }
 
- setInterval(calculate, 1000);
+ var interval = setInterval(calculate, 1000);
 
  function calculate() {
    // gets current time
