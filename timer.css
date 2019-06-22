@@ -1,0 +1,19 @@
+#hours {
+  color: blue;
+  font-size: 20px;
+}
+
+#minutes {
+  color: green;
+  font-size: 20px;
+}
+
+#seconds {
+  color: red;
+  font-size: 20px;
+}
+
+p {
+  font-family: Arial;
+
+}
