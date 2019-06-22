@@ -1,3 +1,7 @@
 .jumbotron {
-  margin-bottom: auto;
+  margin-bottom: 2%;
+}
+
+.modal-content {
+  opacity: 0.95;
 }
