@@ -40,10 +40,12 @@ function recipeDisplay(){
     $(testRecipe[0]['directions']).each(function(i) {
       var newListItem = document.createElement('li');
       var newInput = document.createElement('input');
+      var label = document.createElement('label');
+
       newInput.type="checkbox";
-      newInput.text="hi";
-      console.log(newInput);
-      $(newListItem).append(newInput);
+      label.appendChild(newInput);
+      label.appendChild(document.createTextNode(this.step));
+      $(newListItem).append(label);
       //$(newListItem).text(this.step);
       $("#recipeDirections").append(newListItem);
     });
