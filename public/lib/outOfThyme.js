@@ -36,7 +36,6 @@ firebase.initializeApp(firebaseConfig);
 var db = firebase.firestore();
 
 $(function() {
-=======
 // When form button is clicked, recipeDisplay is run and the text of the recipe description and recipe directions are changed.
 $("#formSubmitBtn").on("click", function(){
   recipeDisplay();
@@ -82,4 +81,3 @@ function recipeDisplay(){
 function trackRecipeProgression() {
 
 }
-
