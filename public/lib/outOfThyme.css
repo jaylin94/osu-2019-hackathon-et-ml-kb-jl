@@ -1,7 +1,16 @@
 .jumbotron {
   margin-bottom: 2%;
+  background: seagreen;
 }
 
 .modal-content {
   opacity: 0.95;
+}
+
+.introTitle  {
+  text-shadow: 0px 4px 10px black, 1px 1px 1px grey;
+}
+
+#introAuthors {
+  text-shadow: 0px 2px 2px black;
 }
