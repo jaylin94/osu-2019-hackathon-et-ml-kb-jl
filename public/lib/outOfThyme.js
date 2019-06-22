@@ -54,7 +54,6 @@ function databaseRetrieve(){
 
     trackRecipeProgression();
   });
-});
 
 // Display's recipe selected from dropdown, only recipe1 generates info currently
 function recipeDisplay(){
