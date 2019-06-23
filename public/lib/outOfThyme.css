@@ -1,9 +1,3 @@
-/* body {
-  background-image: url("depositphotos_197529958-stock-illustration-pattern-herbs-spices-italian-herb.jpg");
-  background-size: cover;
-  background-repeat: repeat;
-} */
-
 body, p {
   font-family: 'Raleway', sans-serif;
 }
@@ -11,7 +5,8 @@ body, p {
 .container-fluid {
   background-image: url("thyme_herb-wallpaper-2560x1600.jpg");
   background-size: cover;
-  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   padding-left: 0%;
   padding-bottom: 20%;
   margin-top: 3%;
@@ -21,8 +16,9 @@ body, p {
   width: 100%;
   height: 100%;
   position: fixed;
+  align-content: center;
   padding-bottom: 35%;
-  padding-top: 10%;
+  padding-top: 1%;
   background-image: url("thyme_herb-wallpaper-2560x1600.jpg");
   background-size: cover;
   background-position: center;
@@ -95,21 +91,26 @@ body, p {
   border: 2px outset white;
 }
 
+#timerStartBtn {
+  margin-bottom: 2%;
+  background-color: #55cc0c;
+  text-shadow: 1px -1px 4px black, 1px 2px 3px beige;
+  border: 2px solid white;
+}
+
+#timerPauseBtn {
+  margin-bottom: 2%;
+  text-shadow: 1px -1px 4px black, 1px 2px 3px beige;
+  border: 2px solid white;
+}
+
+#timerResetBtn {
+  margin-bottom: 2%;
+  text-shadow: 1px -1px 4px black, 1px 2px 3px beige;
+  border: 2px solid white;
+}
+
 #recipeMainBody {
   padding: 3%;
   background-color: white;
 }
-
-/*
-#recipeDescriptionBody {
-  border: 3px double #c4ffc1;
-}
-
-#recipeDirectionBody {
-  margin: 3%;
-  border: 3px double #c4ffc1;
-}
-
-#recipeTimerBody {
-  border: 3px double #c4ffc1;
-} */

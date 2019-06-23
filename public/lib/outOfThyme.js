@@ -48,10 +48,10 @@ $(function() {
     e.preventDefault();
     var recipeSelected = $( "#recipeSelect" ).val();
 
-    //databaseRetrieve();
-    getSteps(recipeSelected);
-    setTimeout(recipeDisplay, 500);
-    setTimeout(trackRecipeProgression, 500);
+  //databaseRetrieve();
+  getSteps(recipeSelected);
+  setTimeout(recipeDisplay, 700);
+  setTimeout(trackRecipeProgression, 700);
   });
   //reference: https://www.youtube.com/watch?v=NcewaPfFR6Y
   /*function databaseRetrieve(){
