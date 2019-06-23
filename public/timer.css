@@ -21,6 +21,10 @@ input[type="checkbox"] {
   margin-right: 10px;
 }
 
+audio {
+  display: none;
+}
+
 /* based off of https://www.tutorialspoint.com/How-I-can-change-the-style-of-alert-box-using-JavaScript */
 #confirm {
   display: none;
