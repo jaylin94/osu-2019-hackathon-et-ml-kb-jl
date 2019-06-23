@@ -64,6 +64,7 @@ function recipeDisplay(){
   //if($("#recipeSelect").val() === "recipe1"){
     $("#recipeDescription").text(recipeDesc.description);
     $("#recipeDirections").empty();
+    $("#recipeIngredients").text(recipeDesc.ingredients);
     // list each recipe step w/checkbox
     $(recipeDir).each(function(i) {
       var newListItem = document.createElement('li');
@@ -151,6 +152,25 @@ function getSteps(recipeId){
   });
 };
 
+function getIngredients(recipeID){
+  //get the recipe info, including the description
+  var recipeQuery=db.collection('recipes').where('id', '==', recipeId);
+  recipeQuery.get().then((snapshot)=>{
+    snapshot.docs.forEach(doc=>{
+      // console.log(doc.data());
+      recipeDesc=doc.data();
+    })
+  })
+//get each recipe direction one by one, and push to recipeDir array from firestore db
+  recipeIng=[]
+  var dirQuery=db.collection('ingredients').where('id', '==', recipeId);
+  dirQuery.get().then((snapshot)=>{
+    snapshot.docs.forEach(doc=>{
+      // console.log(doc.data());
+      recipeDir.push(doc.data());
+    })
+  });
+}
 
 //Hides initial page and landing page
 $(".fade-out").css("opacity", 0);
