@@ -35,6 +35,8 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 var db = firebase.firestore();
 
+var synth = window.speechSynthesis;
+
 $(function() {
 // When form button is clicked, recipeDisplay is run and the text of the recipe description and recipe directions are changed.
   $("#formSubmitBtn").on("click", function(e){
@@ -85,6 +87,9 @@ function trackRecipeProgression() {
     currentStep = listItems.index(this) + 1;
 
     var time = testRecipe[0]['directions'][currentStep].time;
+    var speech=testRecipe[0]['directions'][currentStep].step;
+    var utterThis = new SpeechSynthesisUtterance(speech);
+    synth.speak(utterThis);
 
     if (time) {
       if (confirm('Begin timer?')) {
