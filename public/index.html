@@ -84,27 +84,29 @@
         <button id="formSubmitBtn" type="submit" class="btn btn-primary">Submit</button>
       </form>
 
-      <div class="row text-center">
-        <div class="col-sm">
-          <h5>Recipe Description</h5>
-          <p id="recipeDescription"></p>
-        </div>
+      <div id="recipeMainBody">
+        <div class="row text-center">
+          <div class="col-sm">
+            <h5>Recipe Description</h5>
+            <p id="recipeDescription"></p>
+          </div>
 
-      </div>
-      <div class="row text-left">
-        <div class="col-sm-6">
-          <h5>Directions</h5>
-          <ul id="recipeDirections"></ul>
         </div>
-        <div class="col-sm-6">
-          <h5>Timers</h5>
-          <p id="recipeTimers">
-            <span id="hours"></span> Hour(s)
-            <span id="minutes"></span> Minute(s)
-            <span id="seconds"></span> Second(s)</p>
-          <button id="#timerStartBtn" class="btn btn-info">Start</button>
-          <button id="#timerPause" class="btn btn-warning text-light">Pause</button>
-          <button id="#timerResetBtn" class="btn btn-danger">Reset</button>
+        <div class="recipeDirectionBody row text-left">
+          <div class="col-sm-6">
+            <h5>Directions</h5>
+            <ul id="recipeDirections"></ul>
+          </div>
+          <div class="recipeTimerBody col-sm-6">
+            <h5>Timers</h5>
+            <p id="recipeTimers">
+              <span id="hours"></span> Hour(s)
+              <span id="minutes"></span> Minute(s)
+              <span id="seconds"></span> Second(s)</p>
+            <button id="#timerStartBtn" class="btn btn-info">Start</button>
+            <button id="#timerPause" class="btn btn-warning text-light">Pause</button>
+            <button id="#timerResetBtn" class="btn btn-danger">Reset</button>
+          </div>
         </div>
       </div>
 
