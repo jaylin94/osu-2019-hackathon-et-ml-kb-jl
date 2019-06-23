@@ -1,5 +1,9 @@
 # osu-2019-hackathon-et-ml-kb-jl
 
+![Landing Page!](https://raw.githubusercontent.com/jaylin94/osu-2019-hackathon-et-ml-kb-jl/master/screenshots/Screen\ Shot\ 2019-06-23\ at\ 2.11.40\ PM.png.png)
+
+![Landing Page!](https://raw.githubusercontent.com/jaylin94/osu-2019-hackathon-et-ml-kb-jl/master/screenshots/Screen\ Shot\ 2019-06-23\ at\ 12.08.55 PM.png)
+
 # Out of Thyme!
 
 Out of Thyme! was created as a project for the OSU 2019 Summer Hackathon with the theme being "Time".
