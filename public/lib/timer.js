@@ -42,6 +42,8 @@ var Timer = {
   startTimer: function(addMin) {
      let days, hours, minutes, seconds;
 
+     if (this.timerInterval) { clearInterval(this.timerInterval); }
+
      this.minutes = addMin;
      this.minutesRemaining = addMin;
 
