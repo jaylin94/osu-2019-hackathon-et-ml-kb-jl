@@ -21,8 +21,9 @@ var Timer = {
       e.preventDefault();
       $('#timerPause').attr('disabled', true);
       $('#timerStartBtn').attr('disabled', false);
+
       clearInterval(this.timerInterval);
-      pauseTime=currentTimeRemaining;
+      pauseTime = currentTimeRemaining;
     }.bind(this));
   },
   startButton: function() {
@@ -30,7 +31,7 @@ var Timer = {
       e.preventDefault();
       $('#timerPause').attr('disabled', false);
       $('#timerResetBtn').attr('disabled', false);
-      //this.timerInterval = setInterval(this.calculate, 1000);
+
       Timer.startTimer(pauseTime/60, true);
     }.bind(this));
   },
@@ -89,15 +90,7 @@ var Timer = {
     } else {
       clearInterval(this.timerInterval)
       this.minutes = 0;
-      // $('#audio')[0].play();
-      // setTimeout(function() {
-      //   $('#audio')[0].pause();
-      // }, 1000);
-      $.playSound('lib/beep-09.mp3');
-      setTimeout(function() {
-        $.stopSound();
-        return;
-      }, 1000);
+      return;
     }
   },
   reset: function() {
