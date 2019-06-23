@@ -43,9 +43,10 @@ var synth = window.speechSynthesis;
 
 $(function() {
 // When form button is clicked, recipeDisplay is run and the text of the recipe description and recipe directions are changed.
+  Timer.init();
   $("#formSubmitBtn").on("click", function(e){
-  e.preventDefault();
-  var recipeSelected = $( "#recipeSelect" ).val();
+    e.preventDefault();
+    var recipeSelected = $( "#recipeSelect" ).val();
 
   //databaseRetrieve();
   getSteps(recipeSelected);
@@ -116,14 +117,15 @@ function trackRecipeProgression() {
 
     var time = recipeDir[currentStep].time;
   //read the next direction to user
-    var speech=recipeDir[currentStep].direction;
+    var speech = recipeDir[currentStep].direction;
     var utterThis = new SpeechSynthesisUtterance(speech);
-    utterThis.lang='en-GB';
+    utterThis.lang = 'en-GB';
     synth.speak(utterThis);
 
     if (time) {
       if (confirm('Begin timer?')) {
-        timer(time);
+        // timer(time);
+        Timer.startTimer(time);
       }
     }
   });
