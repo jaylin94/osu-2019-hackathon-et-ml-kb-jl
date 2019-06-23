@@ -150,6 +150,7 @@ function getSteps(recipeId){
 //Hides initial page and landing page
 $(".fade-out").css("opacity", 0);
 $(".landing-page").css("opacity", 0);
+$("body").css("background", "white");
 
 //Animates landing page and navbar as page is loaded
 $(".landing-page").animate({opacity: 1}, 2000);
