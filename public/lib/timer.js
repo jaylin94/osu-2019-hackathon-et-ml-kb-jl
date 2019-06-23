@@ -87,13 +87,17 @@ var Timer = {
       document.getElementById("minutes").innerHTML = ("0" + minutes).slice(-2);
       document.getElementById("seconds").innerHTML = ("0" + seconds).slice(-2);
     } else {
-      $('#audio')[0].play();
-      setTimeout(function() {
-        $('#audio')[0].pause();
-      }, 3000);
       clearInterval(this.timerInterval)
       this.minutes = 0;
-      return;
+      // $('#audio')[0].play();
+      // setTimeout(function() {
+      //   $('#audio')[0].pause();
+      // }, 1000);
+      $.playSound('lib/beep-09.mp3');
+      setTimeout(function() {
+        $.stopSound();
+        return;
+      }, 1000);
     }
   },
   reset: function() {
