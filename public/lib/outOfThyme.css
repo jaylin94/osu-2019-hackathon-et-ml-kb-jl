@@ -92,8 +92,21 @@ body, p {
 
 #timerStartBtn {
   margin-bottom: 2%;
-  text-shadow: 1px -1px 2px black, 1px 2px 3px beige;
-  border: 2px outset white;
+  background-color: #55cc0c;
+  text-shadow: 1px -1px 4px black, 1px 2px 3px beige;
+  border: 2px solid white;
+}
+
+#timerPauseBtn {
+  margin-bottom: 2%;
+  text-shadow: 1px -1px 4px black, 1px 2px 3px beige;
+  border: 2px solid white;
+}
+
+#timerResetBtn {
+  margin-bottom: 2%;
+  text-shadow: 1px -1px 4px black, 1px 2px 3px beige;
+  border: 2px solid white;
 }
 
 #recipeMainBody {
