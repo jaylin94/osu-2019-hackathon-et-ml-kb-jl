@@ -44,13 +44,14 @@ var synth = window.speechSynthesis;
 $(function() {
 // When form button is clicked, recipeDisplay is run and the text of the recipe description and recipe directions are changed.
   $("#formSubmitBtn").on("click", function(e){
-    e.preventDefault();
-    var recipeSelected = $( "#recipeSelect" ).val();
-    recipeDisplay();
-    //databaseRetrieve();
-    getSteps(recipeSelected);
-    trackRecipeProgression();
-    });
+  e.preventDefault();
+  var recipeSelected = $( "#recipeSelect" ).val();
+
+  //databaseRetrieve();
+  getSteps(recipeSelected);
+  setTimeout(recipeDisplay, 250);
+  trackRecipeProgression();
+  });
   //reference: https://www.youtube.com/watch?v=NcewaPfFR6Y
   /*function databaseRetrieve(){
   }*/
@@ -133,7 +134,7 @@ function getSteps(recipeId){
   var recipeQuery=db.collection('recipes').where('id', '==', recipeId);
   recipeQuery.get().then((snapshot)=>{
     snapshot.docs.forEach(doc=>{
-      console.log(doc.data());
+      // console.log(doc.data());
       recipeDesc=doc.data();
     })
   })
@@ -142,7 +143,7 @@ function getSteps(recipeId){
   var dirQuery=db.collection('directions').where('id', '==', recipeId).orderBy('stepNum','asc');
   dirQuery.get().then((snapshot)=>{
     snapshot.docs.forEach(doc=>{
-      console.log(doc.data());
+      // console.log(doc.data());
       recipeDir.push(doc.data());
     })
   });
