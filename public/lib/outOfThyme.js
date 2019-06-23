@@ -23,7 +23,7 @@ $(function() {
   $("#formSubmitBtn").on("click", function(e){
     e.preventDefault();
     var recipeSelected = $( "#recipeSelect" ).val();
-
+    $("#startCookingBtn").css('display','block');
     getSteps(recipeSelected);
     setTimeout(recipeDisplay, 700);
     setTimeout(trackRecipeProgression, 700);
@@ -48,6 +48,23 @@ function recipeDisplay(){
     $("#recipeDirections").append(newListItem);
   });
 }
+$("#startCookingBtn").on("click", function(e){
+  e.preventDefault();
+  var listItems = $("#recipeDirections li input");
+  var currentStep = 0;
+
+
+    time = recipeDir[0].time;
+  //read the next direction to user
+    var speech = recipeDir[0].direction;
+    var utterThis = new SpeechSynthesisUtterance(speech);
+    utterThis.lang = 'en-GB';
+    synth.speak(utterThis);
+
+    if (time) {
+      functionAlert();
+    }
+  });
 
 function trackRecipeProgression() {
   // track current recipe step of user
