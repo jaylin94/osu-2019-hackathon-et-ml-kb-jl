@@ -4,8 +4,9 @@ body, p {
 
 .container-fluid {
   background-image: url("thyme_herb-wallpaper-2560x1600.jpg");
-  background-size: cover;
-  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   padding-left: 0%;
   padding-bottom: 20%;
   margin-top: 3%;
@@ -89,21 +90,13 @@ body, p {
   border: 2px outset white;
 }
 
+#timerStartBtn {
+  margin-bottom: 2%;
+  text-shadow: 1px -1px 2px black, 1px 2px 3px beige;
+  border: 2px outset white;
+}
+
 #recipeMainBody {
   padding: 3%;
   background-color: white;
 }
-
-/*
-#recipeDescriptionBody {
-  border: 3px double #c4ffc1;
-}
-
-#recipeDirectionBody {
-  margin: 3%;
-  border: 3px double #c4ffc1;
-}
-
-#recipeTimerBody {
-  border: 3px double #c4ffc1;
-} */
