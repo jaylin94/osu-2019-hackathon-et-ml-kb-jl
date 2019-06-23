@@ -125,7 +125,7 @@ function trackRecipeProgression() {
     if (time) {
       if (confirm('Begin timer?')) {
         // timer(time);
-        Timer.startTimer(time);
+        Timer.startTimer(time, true);
       }
     }
   });
