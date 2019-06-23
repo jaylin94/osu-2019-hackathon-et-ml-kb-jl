@@ -1,8 +1,8 @@
 # osu-2019-hackathon-et-ml-kb-jl
 
-![Landing Page!](https://raw.githubusercontent.com/jaylin94/osu-2019-hackathon-et-ml-kb-jl/master/screenshots/Screen\ Shot\ 2019-06-23\ at\ 2.11.40\ PM.png.png)
+![Landing Page!](https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/000/818/446/datas/gallery.jpg)
 
-![Landing Page!](https://raw.githubusercontent.com/jaylin94/osu-2019-hackathon-et-ml-kb-jl/master/screenshots/Screen\ Shot\ 2019-06-23\ at\ 12.08.55 PM.png)
+![Main Page!](https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/000/818/452/datas/gallery.jpg)
 
 # Out of Thyme!
 
