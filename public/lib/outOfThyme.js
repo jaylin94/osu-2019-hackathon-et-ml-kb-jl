@@ -110,3 +110,19 @@ function getSteps(recipeId){
     })
   });
 };
+
+//Hides initial page and landing page
+$(".fade-out").css("opacity", 0);
+$(".landing-page").css("opacity", 0);
+
+//Animates landing page and navbar as page is loaded
+$(".landing-page").animate({opacity: 1}, 2000);
+$(".navbar-top").animate({opacity: 1}, 2000);
+
+
+//Enter button functionality, animates landing page, main page
+$("#enterBtn").on("click", function(){
+  $(".landing-page").animate({opacity: 0}, 1000);
+  $(".fade-out").animate({opacity: 1}, 2000);
+  $(".landing-page").fadeOut();
+});
