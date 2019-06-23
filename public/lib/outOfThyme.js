@@ -48,63 +48,30 @@ $(function() {
     e.preventDefault();
     var recipeSelected = $( "#recipeSelect" ).val();
 
-  //databaseRetrieve();
-  getSteps(recipeSelected);
-  setTimeout(recipeDisplay, 700);
-  setTimeout(trackRecipeProgression, 700);
+    getSteps(recipeSelected);
+    setTimeout(recipeDisplay, 700);
+    setTimeout(trackRecipeProgression, 700);
   });
-  //reference: https://www.youtube.com/watch?v=NcewaPfFR6Y
-  /*function databaseRetrieve(){
-  }*/
-
 });
 
 // Display's recipe selected from dropdown, only recipe1 generates info currently
 function recipeDisplay(){
-  //if($("#recipeSelect").val() === "recipe1"){
-    $("#recipeDescription").text(recipeDesc.description);
-    $("#recipeDirections").empty();
-    $("#recipeIngredients").text(recipeDesc.ingredients);
-    // list each recipe step w/checkbox
-    $(recipeDir).each(function(i) {
-      var newListItem = document.createElement('li');
-      var newInput = document.createElement('input');
-      var label = document.createElement('label');
+  $("#recipeDescription").text(recipeDesc.description);
+  $("#recipeDirections").empty();
+  $("#recipeIngredients").text(recipeDesc.ingredients);
+  // list each recipe step w/checkbox
+  $(recipeDir).each(function(i) {
+    var newListItem = document.createElement('li');
+    var newInput = document.createElement('input');
+    var label = document.createElement('label');
 
-      newInput.type="checkbox";
-      label.appendChild(newInput);
-      label.appendChild(document.createTextNode(this.direction));
-      $(newListItem).append(label);
-      $("#recipeDirections").append(newListItem);
-  //  });
-})}
-/*else {
-    $("#recipeDescription").text("N/A");
-    $("#recipeDirections").text("N/A");
-  }*/
-//}
-/*function recipeDisplay(){
-  if($("#recipeSelect").val() === "recipe1"){
-    $("#recipeDescription").text(testRecipe[0].description);
-
-    // list each recipe step w/checkbox
-    $(testRecipe[0]['directions']).each(function(i) {
-      var newListItem = document.createElement('li');
-      var newInput = document.createElement('input');
-      var label = document.createElement('label');
-
-      newInput.type="checkbox";
-      label.appendChild(newInput);
-      label.appendChild(document.createTextNode(this.step));
-      $(newListItem).append(label);
-      $("#recipeDirections").append(newListItem);
-    });
-  }
-  else {
-    $("#recipeDescription").text("N/A");
-    $("#recipeDirections").text("N/A");
-  }
-}*/
+    newInput.type="checkbox";
+    label.appendChild(newInput);
+    label.appendChild(document.createTextNode(this.direction));
+    $(newListItem).append(label);
+    $("#recipeDirections").append(newListItem);
+  });
+}
 
 function trackRecipeProgression() {
   // track current recipe step of user
