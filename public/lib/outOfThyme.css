@@ -9,10 +9,12 @@ body, p {
 }
 
 .container-fluid {
-  background-image: url("14577544037_b89988f361_b.jpg");
-  background-size: center;
-  background-repeat: repeat;
+  background-image: url("thyme_herb-wallpaper-2560x1600.jpg");
+  background-size: cover;
+  background-position: center;
   padding-left: 0%;
+  padding-bottom: 20%;
+  margin-top: 3%;
 }
 
 .landing-page {
@@ -32,7 +34,6 @@ body, p {
   margin-top: 5%;
   max-height: 100%;
   max-width: 100%;
-  opacity: 0.95;
 }
 
 .thyme-bg {
@@ -65,6 +66,7 @@ body, p {
 
 .introTitle {
   margin-top: 5%;
+  padding-top: 7%;
   font-family: 'Pacifico', cursive ;
   font-size: 60px;
   color: #373D3F;
@@ -90,13 +92,12 @@ body, p {
   background-color: white;
   color: black;
   text-shadow: 1px -1px 2px white, 1px 2px 3px beige;
-  border: 2px outset #c4ffc1;
+  border: 2px outset white;
 }
 
 #recipeMainBody {
   padding: 3%;
   background-color: white;
-  border: 5px outset #c4ffc1;
 }
 
 /*

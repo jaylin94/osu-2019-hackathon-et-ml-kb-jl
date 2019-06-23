@@ -64,66 +64,70 @@
     </div>
 
     <!-- Intro display, jumbotron -->
-    <div class="container fade-out">
+    <!-- <div class="container fade-out">
       <div class="jumbotron thyme-bg text-center">
+
+        <!-- <button id="enterBtn" class="btn btn-center btn-success">Enter</button> -->
+    <!-- </div> -->
+
+
+    <!-- Recipe Form and main body -->
+    <div class="container fade-out">
+      <div class="text-center">
         <h1 class="introTitle">Out of Thyme!</h1>
         <h3 class="introMsg">A cooking companion by:</h3>
         <p id="introAuthors">Elizabeth Tackett, Jay Lin, Mae LaPresta, Karen Berba</p>
-        <!-- <button id="enterBtn" class="btn btn-center btn-success">Enter</button> -->
       </div>
 
+      <form>
+        <div class="form-group">
+          <label for="recipeSelect">Select a recipe</label>
+          <select class="form-control form-control-lg" id="recipeSelect">
+            <option value="recipe1" id="recipe1">Recipe 1</option>
+            <option value="recipe2" id="recipe2">Recipe 2</option>
+            <option value="recipe3" id="recipe3">Recipe 3</option>
+          </select>
+        </div>
+        <button id="formSubmitBtn" type="submit" class="btn btn-primary">Submit</button>
+      </form>
 
-      <!-- Recipe Form and main body -->
-      <div class="container fade-out">
-        <form>
-          <div class="form-group">
-            <label for="recipeSelect">Select a recipe</label>
-            <select class="form-control form-control-lg" id="recipeSelect">
-              <option value="recipe1" id="recipe1">Recipe 1</option>
-              <option value="recipe2" id="recipe2">Recipe 2</option>
-              <option value="recipe3" id="recipe3">Recipe 3</option>
-            </select>
+      <div id="recipeMainBody">
+        <div id="recipeDescriptionBody" class="row text-center">
+          <div class="col-sm">
+            <h5>Recipe Description</h5>
+            <p id="recipeDescription"></p>
           </div>
-          <button id="formSubmitBtn" type="submit" class="btn btn-primary">Submit</button>
-        </form>
 
-        <div id="recipeMainBody">
-          <div id="recipeDescriptionBody" class="row text-center">
-            <div class="col-sm">
-              <h5>Recipe Description</h5>
-              <p id="recipeDescription"></p>
-            </div>
-
+        </div>
+        <div class="row text-left">
+          <div class="recipeDirectionBody col-sm-6">
+            <h5>Directions</h5>
+            <ul id="recipeDirections"></ul>
           </div>
-          <div class="row text-left">
-            <div class="recipeDirectionBody col-sm-6">
-              <h5>Directions</h5>
-              <ul id="recipeDirections"></ul>
-            </div>
-            <div class="recipeTimerBody col-sm-6">
-              <h5>Timers</h5>
-              <p id="recipeTimers">
-                <span id="hours"></span> Hour(s)
-                <span id="minutes"></span> Minute(s)
-                <span id="seconds"></span> Second(s)</p>
-              <button id="#timerStartBtn" class="btn btn-info">Start</button>
-              <button id="#timerPause" class="btn btn-warning text-light">Pause</button>
-              <button id="#timerResetBtn" class="btn btn-danger">Reset</button>
-            </div>
+          <div class="recipeTimerBody col-sm-6">
+            <h5>Timers</h5>
+            <p id="recipeTimers">
+              <span id="hours"></span> Hour(s)
+              <span id="minutes"></span> Minute(s)
+              <span id="seconds"></span> Second(s)</p>
+            <button id="#timerStartBtn" class="btn btn-info">Start</button>
+            <button id="#timerPause" class="btn btn-warning text-light">Pause</button>
+            <button id="#timerResetBtn" class="btn btn-danger">Reset</button>
           </div>
         </div>
       </div>
+    </div>
 
 
-      <script src="https://www.gstatic.com/firebasejs/6.2.2/firebase-app.js"></script>
-      <script src="https://www.gstatic.com/firebasejs/6.2.2/firebase-database.js"></script>
-      <script src="https://www.gstatic.com/firebasejs/6.2.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.2/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.2/firebase-firestore.js"></script>
 
-      <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-      <script src="./lib/timer.js" type="text/javascript"></script>
-      <script src="./lib/outOfThyme.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="./lib/timer.js" type="text/javascript"></script>
+    <script src="./lib/outOfThyme.js" type="text/javascript"></script>
 
 
 </body>
