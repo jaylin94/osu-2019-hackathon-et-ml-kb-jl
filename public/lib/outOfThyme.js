@@ -22,6 +22,7 @@ var testRecipe = [
   }
 ];
 
+
 var recipeDir=[];
 var recipeDesc={}
 // Your web app's Firebase configuration
@@ -37,7 +38,7 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 var db = firebase.firestore();
-
+//for text to speech functionality
 var synth = window.speechSynthesis;
 
 $(function() {
@@ -113,6 +114,7 @@ function trackRecipeProgression() {
     currentStep = listItems.index(this) + 1;
 
     var time = recipeDir[currentStep].time;
+  //read the next direction to user
     var speech=recipeDir[currentStep].direction;
     var utterThis = new SpeechSynthesisUtterance(speech);
     utterThis.lang='en-GB';
@@ -135,7 +137,7 @@ function getSteps(recipeId){
       recipeDesc=doc.data();
     })
   })
-//get each recipe direction one by one, from firestore db
+//get each recipe direction one by one, and push to recipeDir array from firestore db
   recipeDir=[]
   var dirQuery=db.collection('directions').where('id', '==', recipeId).orderBy('stepNum','asc');
   dirQuery.get().then((snapshot)=>{
