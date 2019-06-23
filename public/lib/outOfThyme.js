@@ -89,6 +89,7 @@ function trackRecipeProgression() {
     var time = testRecipe[0]['directions'][currentStep].time;
     var speech=testRecipe[0]['directions'][currentStep].step;
     var utterThis = new SpeechSynthesisUtterance(speech);
+    utterThis.lang='en-GB';
     synth.speak(utterThis);
 
     if (time) {
