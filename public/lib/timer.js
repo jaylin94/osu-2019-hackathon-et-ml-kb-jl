@@ -4,6 +4,8 @@
  // 0.25 h = 900000 ms  (15 minutes)
 
 var Timer = {
+  currentTimeRemaining:0,
+  pauseTime:0,
   timerInterval: null,
   minutes: 0,
   endDate: null,
@@ -20,6 +22,7 @@ var Timer = {
       $('#timerPause').attr('disabled', true);
       $('#timerStartBtn').attr('disabled', false);
       clearInterval(this.timerInterval);
+      pauseTime=currentTimeRemaining;
     }.bind(this));
   },
   startButton: function() {
@@ -27,7 +30,8 @@ var Timer = {
       e.preventDefault();
       $('#timerPause').attr('disabled', false);
       $('#timerResetBtn').attr('disabled', false);
-      this.timerInterval = setInterval(this.calculate, 1000);
+      //this.timerInterval = setInterval(this.calculate, 1000);
+      Timer.startTimer(pauseTime/60, true);
     }.bind(this));
   },
   stopTimer: function() {
@@ -37,6 +41,8 @@ var Timer = {
   },
   startTimer: function(addMin) {
      let days, hours, minutes, seconds;
+
+     if (this.timerInterval) { clearInterval(this.timerInterval); }
 
      this.minutes = addMin;
      this.minutesRemaining = addMin;
@@ -67,6 +73,7 @@ var Timer = {
 
     // calculates time in hours, minutes, and seconds
     if (timeRemaining >= 0) {
+      currentTimeRemaining=timeRemaining;
       hours = parseInt(timeRemaining / 3600);
       timeRemaining = (timeRemaining % 3600);
 
