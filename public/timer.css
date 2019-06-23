@@ -24,14 +24,16 @@ input[type="checkbox"] {
 /* based off of https://www.tutorialspoint.com/How-I-can-change-the-style-of-alert-box-using-JavaScript */
 #confirm {
   display: none;
+  box-sizing: border-box;
   background-color: #F1F2F6;
   color: #373D3F;
   border: 1px solid #aaa;
   position: fixed;
   width: 250px;
+  top: 20%;
   left: 50%;
   margin-left: -100px;
-  padding: 6px 8px 8px;
+  padding: 20px 40px;
   box-sizing: border-box;
   text-align: center;
   z-index: 5;
