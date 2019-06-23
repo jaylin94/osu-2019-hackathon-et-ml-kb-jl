@@ -49,7 +49,7 @@ $(function() {
 
   //databaseRetrieve();
   getSteps(recipeSelected);
-  setTimeout(recipeDisplay, 250);
+  setTimeout(recipeDisplay, 500);
   trackRecipeProgression();
   });
   //reference: https://www.youtube.com/watch?v=NcewaPfFR6Y
