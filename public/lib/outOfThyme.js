@@ -64,6 +64,7 @@ function recipeDisplay(){
   //if($("#recipeSelect").val() === "recipe1"){
     $("#recipeDescription").text(recipeDesc.description);
     $("#recipeDirections").empty();
+    $("#recipeIngredients").text(recipeDesc.ingredients);
     // list each recipe step w/checkbox
     $(recipeDir).each(function(i) {
       var newListItem = document.createElement('li');

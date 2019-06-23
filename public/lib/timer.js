@@ -6,6 +6,7 @@
 var Timer = {
   timerInterval: null,
   minutes: 0,
+  endDate: null,
   resetButton: function() {
     $('#timerResetBtn').on("click", function(e) {
       e.preventDefault();
@@ -26,6 +27,7 @@ var Timer = {
       e.preventDefault();
       $('#timerPause').attr('disabled', false);
       $('#timerResetBtn').attr('disabled', false);
+      this.timerInterval = setInterval(this.calculate, 1000);
     }.bind(this));
   },
   stopTimer: function() {
@@ -35,9 +37,9 @@ var Timer = {
   },
   startTimer: function(addMin) {
      let days, hours, minutes, seconds;
-     let endDate;
 
      this.minutes = addMin;
+     this.minutesRemaining = addMin;
 
      $('#timerResetBtn').attr('disabled', false);
      $('#timerPause').attr('disabled', false);
@@ -46,43 +48,42 @@ var Timer = {
      addMin = addMin * 60000;
 
      // calculates new time (e.g. 60 minutes later)
-     endDate = new Date().getTime();
-     endDate = new Date(endDate + addMin);
+     Timer.endDate = new Date().getTime();
+     Timer.endDate = new Date(this.endDate + addMin);
 
-     if (isNaN(endDate)) {
+     if (isNaN(this.endDate)) {
        return;
      }
 
-     this.timerInterval = setInterval(calculate, 1000);
+     this.timerInterval = setInterval(this.calculate, 1000);
+  },
+  calculate: function() {
+    // gets current time
+    let startDate = new Date();
+    startDate = startDate.getTime();
 
-     function calculate() {
-       // gets current time
-       let startDate = new Date();
-       startDate = startDate.getTime();
+    // get time in seconds
+    let timeRemaining = parseInt((Timer.endDate - startDate) / 1000);
 
-       // get time in seconds
-       let timeRemaining = parseInt((endDate - startDate) / 1000);
+    // calculates time in hours, minutes, and seconds
+    if (timeRemaining >= 0) {
+      hours = parseInt(timeRemaining / 3600);
+      timeRemaining = (timeRemaining % 3600);
 
-       // calculates time in hours, minutes, and seconds
-       if (timeRemaining >= 0) {
-         hours = parseInt(timeRemaining / 3600);
-         timeRemaining = (timeRemaining % 3600);
+      minutes = parseInt(timeRemaining / 60);
+      timeRemaining = (timeRemaining % 60);
 
-         minutes = parseInt(timeRemaining / 60);
-         timeRemaining = (timeRemaining % 60);
+      seconds = parseInt(timeRemaining);
 
-         seconds = parseInt(timeRemaining);
-
-         // __ Hour(s) __Minutes(s) __Seconds(s)
-         document.getElementById("hours").innerHTML = ("0" + hours).slice(-2);
-         document.getElementById("minutes").innerHTML = ("0" + minutes).slice(-2);
-         document.getElementById("seconds").innerHTML = ("0" + seconds).slice(-2);
-       } else {
-         clearInterval(this.timerInterval)
-         this.minutes = 0;
-         return;
-       }
-     }
+      // __ Hour(s) __Minutes(s) __Seconds(s)
+      document.getElementById("hours").innerHTML = ("0" + hours).slice(-2);
+      document.getElementById("minutes").innerHTML = ("0" + minutes).slice(-2);
+      document.getElementById("seconds").innerHTML = ("0" + seconds).slice(-2);
+    } else {
+      clearInterval(this.timerInterval)
+      this.minutes = 0;
+      return;
+    }
   },
   reset: function() {
     this.stopTimer();
@@ -91,7 +92,6 @@ var Timer = {
     $('#seconds').text('00');
 
     if (this.minutes) {
-      console.log('hello');
       this.startTimer(this.minutes);
     }
   },
