@@ -58,3 +58,7 @@ audio {
 #confirm .message {
    text-align: left;
 }
+
+#startCookingBtn {
+  margin: 0 auto;
+}
