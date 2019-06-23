@@ -47,5 +47,6 @@ See also the list of [contributors](https://github.com/your/project/contributors
 ## Acknowledgements
 
 * Big thanks to all of the contributors for coming together and creating a web app together!
-* Shout out to Karen Berba for implementing the timer!
-* Shout out to Mae LaPresta and Elizabeth Tackett for implementing the timer button functionality!
+* Shout-out to Karen Berba for implementing the timer!
+* Shout-out to Mae LaPresta and Elizabeth Tackett for implementing the timer button functionality!
+* Extra shout-out to Mae LaPresta for setting up Firebase and the Web-Speech-API!

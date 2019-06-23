@@ -23,8 +23,9 @@ var testRecipe = [
 ];
 
 
-var recipeDir=[];
-var recipeDesc={}
+var recipeDir = [];
+var recipeDesc = {};
+var time;
 // Your web app's Firebase configuration
 var firebaseConfig = {
   apiKey: "AIzaSyDK_8HWkEyCsHwafNFmf2F4OSfo7IzlRec",
@@ -83,7 +84,7 @@ function trackRecipeProgression() {
     $(this).prop('disabled', true);
     currentStep = listItems.index(this) + 1;
 
-    var time = recipeDir[currentStep].time;
+    time = recipeDir[currentStep].time;
   //read the next direction to user
     var speech = recipeDir[currentStep].direction;
     var utterThis = new SpeechSynthesisUtterance(speech);
@@ -91,30 +92,47 @@ function trackRecipeProgression() {
     synth.speak(utterThis);
 
     if (time) {
-      if (confirm('Begin timer?')) {
-        Timer.startTimer(time, true);
-      }
+      functionAlert();
+      // if (confirm('Begin timer?')) {
+      //   Timer.startTimer(time, true);
+      // }
     }
   });
 }
 
 function getSteps(recipeId){
   //get the recipe info, including the description
-  var recipeQuery=db.collection('recipes').where('id', '==', recipeId);
+  var recipeQuery = db.collection('recipes').where('id', '==', recipeId);
   recipeQuery.get().then((snapshot) => {
     snapshot.docs.forEach(doc => {
       recipeDesc=doc.data();
-    })
-  })
+    });
+  });
 //get each recipe direction one by one, and push to recipeDir array from firestore db
-  recipeDir=[]
-  var dirQuery=db.collection('directions').where('id', '==', recipeId).orderBy('stepNum','asc');
+  recipeDir = [];
+  var dirQuery = db.collection('directions').where('id', '==', recipeId).orderBy('stepNum','asc');
   dirQuery.get().then((snapshot) => {
     snapshot.docs.forEach(doc => {
       recipeDir.push(doc.data());
-    })
+    });
   });
 };
+
+function functionAlert() {
+  var confirmBox = $('#confirm');
+  confirmBox.show();
+
+  $('#confirm-timer').on("click", function(e) {
+    e.preventDefault();
+    confirmBox.hide();
+    Timer.startTimer(time, true);
+  });
+
+  $('#reject-timer').on("click", function(e) {
+    e.preventDefault();
+    confirmBox.hide();
+  });
+}
 
 
 //Hides initial page and landing page

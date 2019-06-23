@@ -20,3 +20,35 @@ ol {
 input[type="checkbox"] {
   margin-right: 10px;
 }
+
+/* based off of https://www.tutorialspoint.com/How-I-can-change-the-style-of-alert-box-using-JavaScript */
+#confirm {
+  display: none;
+  background-color: #F1F2F6;
+  color: #373D3F;
+  border: 1px solid #aaa;
+  position: fixed;
+  width: 250px;
+  left: 50%;
+  margin-left: -100px;
+  padding: 6px 8px 8px;
+  box-sizing: border-box;
+  text-align: center;
+  z-index: 5;
+}
+
+#confirm button {
+   background-color: #218838;
+   display: inline-block;
+   border-radius: 5px;
+   border: 1px solid #aaa;
+   color: #fff;
+   padding: 5px;
+   text-align: center;
+   width: 80px;
+   cursor: pointer;
+}
+
+#confirm .message {
+   text-align: left;
+}
