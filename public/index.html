@@ -11,104 +11,109 @@
 </head>
 
 <body>
-  <!-- Testing landing page -->
-  <div class="landing-page text-center">
-    <h1 class="introTitle">Out of Thyme!</h1>
-    <h3 class="introMsg">A cooking companion by:</h3>
-    <p id="introAuthors">Elizabeth Tackett, Jay Lin, Mae LaPresta, Karen Berba</p>
-    <button id="enterBtn" class="btn btn-center btn-success">Enter</button>
-  </div>
+  <!-- Main Container for BG image -->
+  <div class="container-fluid">
 
-  <!-- Fixed Nav Bar -->
-  <div class="navbar-top fade-out">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">
-        <i class="fas fa-utensils"></i>
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-          <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#myModal">About</a>
-          <!-- Modal -->
-          <div id="myModal" class="modal fade" role="dialog">
-            <div class="modal-dialog">
-              <!-- Modal content-->
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h4 class="modal-title">About: The Authors & Out of Thyme!</h4>
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                  <p>Out of Thyme! was created as a project for the OSU 2019 Summer Hackathon. (add more later) </p>
-                  <p>The Authors:</p>
-                  <p>
-                    Karen Berba, Mae LaPresta, Elizabeth Tackett, Jay Lin (add about later)
-                  </p>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </nav>
-  </div>
-
-  <!-- Intro display, jumbotron -->
-  <div class="container fade-out">
-    <div class="jumbotron thyme-bg text-center">
+    <!-- Landing page -->
+    <div class="landing-page text-center">
       <h1 class="introTitle">Out of Thyme!</h1>
       <h3 class="introMsg">A cooking companion by:</h3>
       <p id="introAuthors">Elizabeth Tackett, Jay Lin, Mae LaPresta, Karen Berba</p>
-      <!-- <button id="enterBtn" class="btn btn-center btn-success">Enter</button> -->
+      <button id="enterBtn" class="btn btn-center btn-success">Enter</button>
     </div>
 
+    <!-- Fixed Nav Bar -->
+    <div class="navbar-top fade-out">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+          <i class="fas fa-utensils"></i>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#myModal">About</a>
+            <!-- Modal -->
+            <div id="myModal" class="modal fade" role="dialog">
+              <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title">About: The Authors & Out of Thyme!</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+                  <div class="modal-body">
+                    <p>Out of Thyme! was created as a project for the OSU 2019 Summer Hackathon. (add more later) </p>
+                    <p>The Authors:</p>
+                    <p>
+                      Karen Berba, Mae LaPresta, Elizabeth Tackett, Jay Lin (add about later)
+                    </p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-    <!-- Recipe Form and main body -->
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Intro display, jumbotron -->
     <div class="container fade-out">
-      <form>
-        <div class="form-group">
-          <label for="recipeSelect">Select a recipe</label>
-          <select class="form-control form-control-lg" id="recipeSelect">
-            <option value="recipe1" id="recipe1">Recipe 1</option>
-            <option value="recipe2" id="recipe2">Recipe 2</option>
-            <option value="recipe3" id="recipe3">Recipe 3</option>
-          </select>
-        </div>
-        <button id="formSubmitBtn" type="submit" class="btn btn-primary">Submit</button>
-      </form>
+      <div class="jumbotron thyme-bg text-center">
+        <h1 class="introTitle">Out of Thyme!</h1>
+        <h3 class="introMsg">A cooking companion by:</h3>
+        <p id="introAuthors">Elizabeth Tackett, Jay Lin, Mae LaPresta, Karen Berba</p>
+        <!-- <button id="enterBtn" class="btn btn-center btn-success">Enter</button> -->
+      </div>
 
-      <div id="recipeMainBody">
-        <div class="row text-center">
-          <div class="col-sm">
-            <h5>Recipe Description</h5>
-            <p id="recipeDescription"></p>
-          </div>
 
-        </div>
-        <div class="recipeDirectionBody row text-left">
-          <div class="col-sm-6">
-            <h5>Directions</h5>
-            <ul id="recipeDirections"></ul>
+      <!-- Recipe Form and main body -->
+      <div class="container fade-out">
+        <form>
+          <div class="form-group">
+            <label for="recipeSelect">Select a recipe</label>
+            <select class="form-control form-control-lg" id="recipeSelect">
+              <option value="recipe1" id="recipe1">Recipe 1</option>
+              <option value="recipe2" id="recipe2">Recipe 2</option>
+              <option value="recipe3" id="recipe3">Recipe 3</option>
+            </select>
           </div>
-          <div class="recipeTimerBody col-sm-6">
-            <h5>Timers</h5>
-            <p id="recipeTimers">
-              <span id="hours"></span> Hour(s)
-              <span id="minutes"></span> Minute(s)
-              <span id="seconds"></span> Second(s)</p>
-            <button id="#timerStartBtn" class="btn btn-info">Start</button>
-            <button id="#timerPause" class="btn btn-warning text-light">Pause</button>
-            <button id="#timerResetBtn" class="btn btn-danger">Reset</button>
+          <button id="formSubmitBtn" type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+        <div id="recipeMainBody">
+          <div id="recipeDescriptionBody" class="row text-center">
+            <div class="col-sm">
+              <h5>Recipe Description</h5>
+              <p id="recipeDescription"></p>
+            </div>
+
+          </div>
+          <div class="row text-left">
+            <div class="recipeDirectionBody col-sm-6">
+              <h5>Directions</h5>
+              <ul id="recipeDirections"></ul>
+            </div>
+            <div class="recipeTimerBody col-sm-6">
+              <h5>Timers</h5>
+              <p id="recipeTimers">
+                <span id="hours"></span> Hour(s)
+                <span id="minutes"></span> Minute(s)
+                <span id="seconds"></span> Second(s)</p>
+              <button id="#timerStartBtn" class="btn btn-info">Start</button>
+              <button id="#timerPause" class="btn btn-warning text-light">Pause</button>
+              <button id="#timerResetBtn" class="btn btn-danger">Reset</button>
+            </div>
           </div>
         </div>
       </div>
+
 
       <script src="https://www.gstatic.com/firebasejs/6.2.2/firebase-app.js"></script>
       <script src="https://www.gstatic.com/firebasejs/6.2.2/firebase-database.js"></script>
