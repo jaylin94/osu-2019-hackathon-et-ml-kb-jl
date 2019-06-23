@@ -98,7 +98,7 @@ body, p {
   border: 2px solid white;
 }
 
-#timerPauseBtn {
+#timerPause {
   margin-bottom: 2%;
   text-shadow: 1px -1px 4px black, 1px 2px 3px beige;
   border: 2px solid white;
