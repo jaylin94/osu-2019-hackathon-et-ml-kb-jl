@@ -21,6 +21,9 @@ var testRecipe = [
     timers: "Placeholder for timers"
   }
 ];
+
+var recipeDir=[];
+var recipeDesc={}
 // Your web app's Firebase configuration
 var firebaseConfig = {
   apiKey: "AIzaSyDK_8HWkEyCsHwafNFmf2F4OSfo7IzlRec",
@@ -41,9 +44,10 @@ $(function() {
 // When form button is clicked, recipeDisplay is run and the text of the recipe description and recipe directions are changed.
   $("#formSubmitBtn").on("click", function(e){
     e.preventDefault();
+    var recipeSelected = $( "#recipeSelect" ).val();
     recipeDisplay();
     //databaseRetrieve();
-    getSteps("recipe1");
+    getSteps(recipeSelected);
     trackRecipeProgression();
     });
   //reference: https://www.youtube.com/watch?v=NcewaPfFR6Y
@@ -54,6 +58,28 @@ $(function() {
 
 // Display's recipe selected from dropdown, only recipe1 generates info currently
 function recipeDisplay(){
+  //if($("#recipeSelect").val() === "recipe1"){
+    $("#recipeDescription").text(recipeDesc.description);
+
+    // list each recipe step w/checkbox
+    $(recipeDir).each(function(i) {
+      var newListItem = document.createElement('li');
+      var newInput = document.createElement('input');
+      var label = document.createElement('label');
+
+      newInput.type="checkbox";
+      label.appendChild(newInput);
+      label.appendChild(document.createTextNode(this.direction));
+      $(newListItem).append(label);
+      $("#recipeDirections").append(newListItem);
+  //  });
+})}
+/*else {
+    $("#recipeDescription").text("N/A");
+    $("#recipeDirections").text("N/A");
+  }*/
+//}
+/*function recipeDisplay(){
   if($("#recipeSelect").val() === "recipe1"){
     $("#recipeDescription").text(testRecipe[0].description);
 
@@ -74,7 +100,7 @@ function recipeDisplay(){
     $("#recipeDescription").text("N/A");
     $("#recipeDirections").text("N/A");
   }
-}
+}*/
 
 function trackRecipeProgression() {
   // track current recipe step of user
@@ -86,8 +112,8 @@ function trackRecipeProgression() {
     $(this).prop('disabled', true);
     currentStep = listItems.index(this) + 1;
 
-    var time = testRecipe[0]['directions'][currentStep].time;
-    var speech=testRecipe[0]['directions'][currentStep].step;
+    var time = recipeDir[currentStep].time;
+    var speech=recipeDir[currentStep].direction;
     var utterThis = new SpeechSynthesisUtterance(speech);
     utterThis.lang='en-GB';
     synth.speak(utterThis);
@@ -106,13 +132,16 @@ function getSteps(recipeId){
   recipeQuery.get().then((snapshot)=>{
     snapshot.docs.forEach(doc=>{
       console.log(doc.data());
+      recipeDesc=doc.data();
     })
   })
 //get each recipe direction one by one, from firestore db
+  recipeDir=[]
   var dirQuery=db.collection('directions').where('id', '==', recipeId).orderBy('stepNum','asc');
   dirQuery.get().then((snapshot)=>{
     snapshot.docs.forEach(doc=>{
       console.log(doc.data());
+      recipeDir.push(doc.data());
     })
   });
 };
