@@ -8,7 +8,7 @@
 # Out of Thyme!
 
 Out of Thyme! was created as a project for the OSU 2019 Summer Hackathon with the theme being "Time".
-We wanted to create a web application for cooking that made the actual execution of a recipe easier. To save each user time, the recipe directions would display in an easy-to-manage list, and timers would be set automatically for the user. Although the app is not completely finished, it is presented today as a prototype that represents the core of our main ideas. We hope you enjoy this concept!
+We wanted to create a web application for cooking that made the actual execution of a recipe easier. To save each user time, the recipe directions would display in an easy-to-manage list, and timers would be set automatically for the user. 
 
 
 ## Features
