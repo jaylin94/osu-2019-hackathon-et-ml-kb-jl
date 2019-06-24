@@ -35,6 +35,7 @@ function recipeDisplay(){
   $("#recipeDescription").text(recipeDesc.description);
   $("#recipeDirections").empty();
   $("#recipeIngredients").text(recipeDesc.ingredients);
+  $("#recipeSource").text(recipeDesc.url);
   // list each recipe step w/checkbox
   $(recipeDir).each(function(i) {
     var newListItem = document.createElement('li');
